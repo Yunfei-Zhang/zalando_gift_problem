@@ -8,10 +8,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - Python: `.venv/Scripts/python.exe` (Python 3.13). Install dependencies with `.venv/Scripts/python.exe -m pip install -r requirements.txt`.
 - Tests: `.venv/Scripts/python.exe -m pytest`. For a single test, add `path/to/test_file.py::test_name`.
+- Data summary and checks: `.venv/Scripts/python.exe -m gift.data`.
+- Git remote: `origin` is `https://github.com/Yunfei-Zhang/zalando_gift_problem` (branch `main`).
+
+When code is added, record its run and test commands here.
 
 ## Repository state
 
-There is no code, dependency file, or test suite yet. The repo has only the problem statement and its data:
+The code lives in the `gift/` package, with tests in `tests/`. `gift/data.py` loads and checks the JSON and returns `GiftData` (`names`, `prices`, `A`, `b`), which every later step uses. `DECISIONS.md` has the "Step review" table showing which steps are done. The original problem statement and data:
 
 - `task.md`: the Zalando "Gift Problem". It is a job-application exercise for an Applied Scientist role, submitted in place of a cover letter, so the reasoning and write-up count as much as the final answer.
 - `items.json`: 60 items (`A1`–`A60`), each with an integer `price`. No volumes.
@@ -19,13 +23,12 @@ There is no code, dependency file, or test suite yet. The repo has only the prob
 
 `task.md` links the datasets on Google Drive. The local JSON files are those datasets, so don't fetch them.
 
-When code is added, record its run and test commands here.
-
 ## The problem, as a model
 
-1. **Estimate item volumes (regression).** Each package's `total_volume` is the sum of its items' true volumes plus measurement error ~ N(0, σ²) with **variance 2** (σ = √2 ≈ 1.41, not 2). An item appears at most once per package, so this is a linear model `A v + ε = b`: `A` is a 1000×60 binary incidence matrix (package × item), `v` holds the unknown volumes, and `b` holds the measured totals. Ordinary least squares is the MLE under this i.i.d. Gaussian noise. Volumes are physically non-negative (NNLS is an option), and `σ²(AᵀA)⁻¹` gives the uncertainty of the estimates.
-2. **Choose the gift (knapsack).** Maximise total price subject to total volume ≤ 40 L. The natural reading is a 0/1 knapsack (each item at most once), but `task.md` does not say this outright, so state the assumption. Volumes are real-valued and there are 60 items, which rules out brute force. Use an exact ILP/MILP, or a DP over discretised volume.
-3. **Robustness.** The volumes are estimates. If the optimal selection lands close to 40 L, check how likely it is to actually fit, given the estimation uncertainty.
+1. **Estimate item volumes (regression).** Each package's `total_volume` is the sum of its items' true volumes plus Gaussian measurement error. An item appears at most once per package, so this is a linear model `A v + ε = b`: `A` is the 1000×60 0/1 table (package × item), `v` holds the unknown volumes, and `b` holds the measured totals. Ordinary least squares is the maximum-likelihood estimate, and `σ²(AᵀA)⁻¹` gives the uncertainty of the estimates.
+   - **Noise variance:** `task.md` states variance 2, but the residual variance of the fit is about 3.86 (95% CI 3.53–4.23). The author rejects the stated value (DECISIONS #19), so the estimated variance is the main one and the stated 2 is shown only for comparison (#5). The reading "2 was meant as the standard deviation" goes in the write-up labelled as the AI's interpretation, not the author's (#23).
+2. **Choose the gift (knapsack).** Maximise total price subject to total volume ≤ 40 L. The natural reading is a 0/1 knapsack (each item at most once), but `task.md` does not say this outright, so state the assumption. Prices are whole numbers, so a DP over total price is exact without rounding any volume. The method is the author's call in its step.
+3. **Robustness.** The volumes are estimates, and the best-priced set sits very close to 40 L. The headline is the most expensive set with at least a 95% chance of fitting, and the exact optimum is shown alongside with its risk (#4).
 
 ## Working mode (set by the user)
 
@@ -35,8 +38,10 @@ This is the user's job-interview submission, so the user supervises every step:
 - Log every decision and every unreviewed AI finding in `DECISIONS.md`, labelled with who decided. An AI proposal that the user approved is logged as "Author, on AI proposal", never as the user's own idea.
 - The user rejected the AI's proposed solution outline. The structure of the solution and of the write-up is the user's call.
 - The user's write-up structure: Problem statement, Methodology, Results and discussion. Each section has two parts: the AI-assisted work and the author's decisions.
-- The AI writes the code and the user reviews it. Every file the AI drafts starts with the label `AI-drafted (Claude Code, Claude Opus 5.5). Author review: see DECISIONS.md.`, written as a comment. Update the step's row in the "Step review" table of `DECISIONS.md` when the user signs it off.
-- Commit each step only after the user's review, one commit per step. The message says what the AI drafted and what the user decided, citing the log entry numbers. Never commit unreviewed work.
+- The AI writes the code and the user reviews it. Every file the AI drafts carries the label `AI-drafted (Claude Code, Claude Opus 5.5). Author review: see DECISIONS.md.` at the top, written as a comment. In `CLAUDE.md` it sits right after the required header. Update the step's row in the "Step review" table of `DECISIONS.md` when the user signs it off.
+- The README's "Author's decisions" parts must show attribution for each item, for example "(log #16, AI proposal approved by the author)". Findings computed by the AI belong under "AI-assisted work".
+- Any check or behaviour the AI adds beyond what was agreed is logged in `DECISIONS.md` as "AI", pending the author's review.
+- Commit each step only after the user's review, one commit per step. The message says what the AI drafted and what the user decided, citing the log entry numbers. Never commit unreviewed work. Push `main` to `origin` after each approved step commit (#22).
 
 ## Decided so far
 

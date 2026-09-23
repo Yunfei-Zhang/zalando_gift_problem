@@ -18,7 +18,7 @@ This project was done with an AI assistant. This file records how the AI was use
 
 ## Labels in files
 
-- Every file the AI drafts starts with the label `AI-drafted (Claude Code, Claude Opus 5.5). Author review: see DECISIONS.md.`, written as a comment in that file's syntax.
+- Every file the AI drafts carries the label `AI-drafted (Claude Code, Claude Opus 5.5). Author review: see DECISIONS.md.` at the top, written as a comment in that file's syntax. In `CLAUDE.md` it sits right after the header that Claude Code requires.
 - In `README.md`, every section is split into "AI-assisted work" and "Author's decisions".
 - The original task files (`task.md`, `items.json`, `packages.json`) are unchanged and carry no label.
 - Each step is committed only after the author's review. The commit message says what the AI drafted and what the author decided.
@@ -28,6 +28,7 @@ This project was done with an AI assistant. This file records how the AI was use
 | Step | Content | Drafted by | Author review |
 |---|---|---|---|
 | 0 | Setup: git, Python 3.13 venv, `requirements.txt`, `.gitignore`, `README.md` skeleton, this log, `CLAUDE.md` | AI | Approved 2026-09-23 |
+| 1 | Data loading and checks: `gift/__init__.py`, `gift/data.py`, `tests/test_data.py`, README step 1 text, log entries #16–#20, `CLAUDE.md` updates (repository state, commands, noise model, labelling rules) | AI | Approved 2026-09-23 |
 
 ## Log
 
@@ -48,3 +49,11 @@ This project was done with an AI assistant. This file records how the AI was use
 | 13 | 2026-09-23 | 0 Setup | Use git, with one commit per step. Each commit message says what the AI drafted and what the author decided. | Author, on AI proposal | |
 | 14 | 2026-09-23 | 0 Setup | Put an AI label in every file the AI drafts. | Author | The AI had recommended relying on this log and the README only; the author chose file labels instead. |
 | 15 | 2026-09-23 | 0 Setup | Use a Python 3.13 virtual environment (`.venv`). | Author, on AI proposal | Needed for the Claude SDK 1.x (Python 3.10 or later). Versions are pinned in `requirements.txt`. |
+| 16 | 2026-09-23 | 1 Data | Keep item combinations that appear more than once as separate measurements. 15 combinations repeat: 13 appear twice and 2 appear three times. | Author, on AI proposal | They are repeated measurements, which the noise model expects. The counts were corrected when step 1 was built; the AI had first reported "15 appear twice". |
+| 17 | 2026-09-23 | 1 Data | If a data check fails, stop with a clear error. | Author, on AI proposal | |
+| 18 | 2026-09-23 | 1 Data | Keep the two negative package volumes (#663: −0.85 L, A39 alone; #790: −0.34 L, A6 alone) as measurement noise. State clearly that a negative volume cannot happen in reality and would not appear in a real data set. | Keeping them: Author, on AI proposal. The statement: Author. | Keeping them was the AI's proposal. Marking them as physically impossible was the author's addition. |
+| 19 | 2026-09-23 | 2 Estimation | In the write-up, state that the stated noise variance (2) is rejected on the basis of the calculation, and explain the calculation. | Author | The numbers will come from the reviewed step 2 code, not from the earlier AI analysis (#3). This makes #5 firmer: the estimated variance is used, and the stated value is shown only for comparison. |
+| 20 | 2026-09-23 | 1 Data | Extra data checks beyond the agreed list: prices must be positive whole numbers written as integers; each package volume must be a finite number; both files must have the expected structure (lists of objects with the right fields). | Author, on AI proposal | The AI added these without asking, so that malformed input stops with a clear error instead of a crash (#17). The author approved them in the step 1 review. |
+| 21 | 2026-09-23 | — | Push the repository to GitHub: `https://github.com/Yunfei-Zhang/zalando_gift_problem`. | Author | The AI pushed the two committed commits (original files, step 0). Step 1 was not pushed because it was not yet reviewed. |
+| 22 | 2026-09-23 | — | Push to GitHub after each approved step commit. | Author | The AI asked "after each step or only on request" with no recommendation. |
+| 23 | 2026-09-23 | 2 Estimation | In the write-up, include the reading that the stated "variance 2" was meant as a standard deviation of 2 (variance 4), labelled as the AI's interpretation. | Author | The interpretation is the AI's hypothesis; the data cannot prove how they were made. The decision to include it is the author's. |

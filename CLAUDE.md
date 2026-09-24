@@ -9,13 +9,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Python: `.venv/Scripts/python.exe` (Python 3.13). Install dependencies with `.venv/Scripts/python.exe -m pip install -r requirements.txt`.
 - Tests: `.venv/Scripts/python.exe -m pytest`. For a single test, add `path/to/test_file.py::test_name`.
 - Data summary and checks: `.venv/Scripts/python.exe -m gift.data`.
+- Volume estimation report, which rewrites `results/volumes.csv`, `results/estimation.json` and `results/figures/*.png`: `.venv/Scripts/python.exe -m gift.estimate`.
 - Git remote: `origin` is `https://github.com/Yunfei-Zhang/zalando_gift_problem` (branch `main`).
 
 When code is added, record its run and test commands here.
 
 ## Repository state
 
-The code lives in the `gift/` package, with tests in `tests/`. `gift/data.py` loads and checks the JSON and returns `GiftData` (`names`, `prices`, `A`, `b`), which every later step uses. `DECISIONS.md` has the "Step review" table showing which steps are done. The original problem statement and data:
+The code lives in the `gift/` package, with tests in `tests/`. `gift/data.py` loads and checks the JSON and returns `GiftData` (`names`, `prices`, `A`, `b`), which every later step uses. `gift/estimate.py` fits the volumes by least squares and returns a `Fit`, whose `covariance(variance)` and `standard_errors(variance)` default to the estimated noise variance; pass `STATED_VARIANCE` only for comparison. `gift/figures.py` holds the plotting helpers. Generated outputs go in `results/` and are committed. `DECISIONS.md` has the "Step review" table showing which steps are done. The original problem statement and data:
 
 - `task.md`: the Zalando "Gift Problem". It is a job-application exercise for an Applied Scientist role, submitted in place of a cover letter, so the reasoning and write-up count as much as the final answer.
 - `items.json`: 60 items (`A1`–`A60`), each with an integer `price`. No volumes.
@@ -38,7 +39,7 @@ This is the user's job-interview submission, so the user supervises every step:
 - Log every decision and every unreviewed AI finding in `DECISIONS.md`, labelled with who decided. An AI proposal that the user approved is logged as "Author, on AI proposal", never as the user's own idea.
 - The user rejected the AI's proposed solution outline. The structure of the solution and of the write-up is the user's call.
 - The user's write-up structure: Problem statement, Methodology, Results and discussion. Each section has two parts: the AI-assisted work and the author's decisions.
-- The AI writes the code and the user reviews it. Every file the AI drafts carries the label `AI-drafted (Claude Code, Claude Opus 5.5). Author review: see DECISIONS.md.` at the top, written as a comment. In `CLAUDE.md` it sits right after the required header. Update the step's row in the "Step review" table of `DECISIONS.md` when the user signs it off.
+- The AI writes the code and the user reviews it. Every file the AI drafts carries the label `AI-drafted (Claude Code, Claude Opus 5.5). Author review: see DECISIONS.md.` at the top, written as a comment. In `CLAUDE.md` it sits right after the required header. Generated files in `results/` carry no label; their origin is logged in `DECISIONS.md`. Update the step's row in the "Step review" table of `DECISIONS.md` when the user signs it off.
 - The README's "Author's decisions" parts must show attribution for each item, for example "(log #16, AI proposal approved by the author)". Findings computed by the AI belong under "AI-assisted work".
 - Any check or behaviour the AI adds beyond what was agreed is logged in `DECISIONS.md` as "AI", pending the author's review.
 - Commit each step only after the user's review, one commit per step. The message says what the AI drafted and what the user decided, citing the log entry numbers. Never commit unreviewed work. Push `main` to `origin` after each approved step commit (#22).

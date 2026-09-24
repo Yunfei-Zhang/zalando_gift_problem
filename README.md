@@ -10,11 +10,17 @@
 
 ### AI-assisted work
 
-_To be written._
+**Other readings of the task (step 3).** The AI computed what the other readings of the task would give, using the step 2 volumes. This is an AI addition beyond the agreed scope, approved by the author (log #39).
+
+- **If an item could be picked more than once,** the best gift would be 106 copies of A6, priced 11,554 in total. That answer depends entirely on A6's volume estimate, which is by far the least certain relative to its size: 0.38 ± 0.29 L, about ±76%.
+- **If the present had to be a single item,** it would be A14 or A49, both priced 119.
 
 ### Author's decisions
 
-_To be written._
+- "The most expensive present" means the set of items with the highest total price (log #38, AI proposal approved by the author).
+- Each item can be picked at most once (log #31, AI proposal approved by the author).
+- The gift fits if its total volume is at most 40 L; exactly 40 L is allowed. Volumes simply add up, with no packing loss (log #35, AI proposal approved by the author).
+- The assumptions are stated here, in the problem statement (log #36, AI proposal approved by the author).
 
 ## 2. Methodology
 
@@ -57,6 +63,25 @@ The AI also added three checks beyond the agreed list, which the author approved
 - `python -m gift.estimate` prints the report and writes `results/volumes.csv`, `results/estimation.json` and the figures in `results/figures/`.
 - Additions the AI made beyond the agreed outputs, approved by the author (log #29): `results/estimation.json`; the outlier count under the stated variance, for comparison; residuals scaled for leverage in the residual figure; a unit-price column in `volumes.csv`; and item labels on the extreme unit-price bars.
 
+**Choosing the gift (step 3).** The AI wrote `gift/knapsack.py` and its tests, `tests/test_knapsack.py`. The problem is a 0/1 knapsack: maximise the total price subject to a total estimated volume of at most 40 L, with each item used at most once. It uses the step 2 volume estimates.
+
+- **Exact table over total price (the proposed method).** Prices are whole numbers, and all 60 add up to 4,348. For every total price P from 0 to 4,348, the table stores the smallest total volume of any set whose prices add up to exactly P. It is filled one item at a time: a set with price P either skips the item, or uses it on top of the best set with price P minus the item's price. The answer is the largest P whose smallest volume fits in 40 L. No volume is rounded, so the answer is exact. The work is 60 items × 4,349 price levels = 260,940 table cells. It grows with the number of items times the sum of all prices, which suits whole-number prices like these.
+- **Integer programming.** The same problem given to scipy's integer-programming solver (`milp`, HiGHS). It searches by branch and bound, using the version with fractional items to prune. Also exact. In the worst case it can take time exponential in the number of items, but it is fast in practice.
+- **Greedy by unit price (comparison only).** Sort the items by price per litre and take each one that still fits. It takes 60 sorted items and 60 fit checks, but it is not guaranteed to find the best set.
+- **Fractional upper bound.** The same greedy order, except the last item may be cut into a fraction. No real set can exceed it.
+- **Near-optimal list.** A depth-first search lists every set that fits and costs within 40 of the best price. It cuts a branch only when even the fractional bound cannot reach that level, so no such set is missed.
+- **Tests:**
+  - both exact methods match brute force over all subsets on small random cases (300 cases for the table, 100 for integer programming);
+  - on 200 cases, greedy never beats the optimum and the bound is never below it;
+  - a two-item example shows greedy can be far off: 2 instead of 40;
+  - the near-optimal list matches brute force;
+  - integer programming matches the table on 100 larger random cases with 15 to 30 items;
+  - edge cases: nothing fits, everything fits, a set of exactly 40 L, and ties, where the smaller volume wins;
+  - float sums that land a hair over the capacity (0.1 + 0.2 = 0.30000000000000004) still count as fitting in every method;
+  - the solver's result is re-checked against the capacity, because its own tolerance (about 10⁻⁷ L) is looser than this project's (10⁻⁹ L);
+  - every method rejects a volume of 0 or below.
+- `python -m gift.knapsack` prints the comparison and writes `results/knapsack.json`.
+
 ### Author's decisions
 
 **Data preparation (step 1):**
@@ -71,6 +96,14 @@ The AI also added three checks beyond the agreed list, which the author approved
 - A fixed volume per package is estimated, tested and reported, but left out of the model, because the task defines a package's volume as the sum of its items' volumes (log #25, AI proposal approved by the author).
 - All four model checks are reported (log #26, AI proposal approved by the author).
 - Outputs: the volume table and the residual histogram (log #27, AI proposal approved by the author), plus histograms of item price, estimated item volume and unit price (log #27, the author's addition).
+
+**Choosing the gift (step 3):**
+
+- The exact table over total price is the proposed method (log #32, AI proposal approved by the author).
+- Integer programming and greedy are run as well, and all three are compared on their final result and computational effort (log #32, the author's).
+- The author raised greedy by unit price (log #30). It serves only as a comparison to the proposed method, with the fractional upper bound and the gap explained (log #37, AI proposal approved by the author).
+- Cross-checks: integer programming against the table on the real data, and brute force on small cases in the tests (log #33, AI proposal approved by the author).
+- Every set within 40 of the best price is listed, for step 4 (log #34, AI proposal approved by the author).
 
 ## 3. Results and discussion
 
@@ -110,8 +143,31 @@ Why the unit price is not needed here, and where it helps (supporting the author
 - **Fragile for small items.** A6's volume is 0.38 ± 0.29 L. Within one standard error, its unit price could be anywhere from about 165 to 1,225 per litre.
 - **Useful for other problems.** It is a fast heuristic for very large problems, it gives an upper bound on the best price in branch-and-bound searches, and it is the exact solution when items can be split.
 
+**The gift on the estimated volumes (step 3).** Results of the three methods and the fractional bound, from `results/knapsack.json`:
+
+| Method | Price | Volume | Items | Median time | Work |
+|---|---|---|---|---|---|
+| Exact table (proposed) | **757** | 39.972 L | A6 A8 A9 A23 A32 A35 A38 A44 A48 | 1.5 ms | 260,940 table cells |
+| Integer programming | **757** | 39.972 L | A6 A8 A9 A23 A32 A35 A38 A44 A48 | 46 ms | 1 branch-and-bound node |
+| Greedy by unit price | 751 | 39.938 L | A6 A8 A9 A23 A32 A35 A38 A39 A44 A53 | 0.09 ms | 60 items sorted and checked |
+| Fractional upper bound | 770.8 | 40 L | not a real set (last item cut) | – | – |
+
+Times are the median of 20 runs (1,000 for greedy) on the author's laptop: Intel Core i7-10610U, Windows 11, Python 3.13. The table shows the run saved in `results/knapsack.json`. Across repeated runs on the same laptop, the times ranged from about 1 to 5 ms for the table, 26 to 160 ms for the solver and 0.04 to 0.3 ms for greedy, but the ranking never changed. The "Work" column counts different things for each method, so it is not comparable across rows.
+
+- **Both exact methods find the same set:** price 757, total volume 39.972 L, leaving 0.028 L to spare. No other set reaches 757.
+- **Greedy lands 6 below the optimum (0.8%).** It decides one item at a time and never reconsiders. It takes the nine items with the best price per litre, which use 34.32 L: A6, A32, A9, A39, A35, A44, A8, A23 and A38. The next item, A48 (81, 7.21 L), no longer fits in the 5.68 L left, so greedy skips it and later adds A53 (44). The optimum drops A39 (31, 1.56 L) to make room for A48. It trades A39 + A53 (75) for A48 (81).
+- **The optimum is within 1.8% of the fractional upper bound,** so no whole-item set could do much better.
+- **Computational effort.** At this size all three are fast.
+  - The table is the fastest exact method here.
+  - The solver needed no branching. At its first node, presolve, cutting planes and a built-in heuristic found 757 and proved it optimal. That work, not call overhead, is most of its time: a trivial one-variable problem takes only a few milliseconds through the same call.
+  - Greedy is the fastest overall, but it is not exact.
+  - For larger problems: the table grows with the number of items times the total of all prices; the solver can in the worst case grow exponentially with the number of items; greedy needs only a sort.
+- **Many sets are close.** 51 sets fit and cost within 40 of the best price. The top five are 757, 751, 741, 737 and 736. The best set leaves only 0.028 L to spare, while each volume estimate is uncertain by about ±0.25 L. Step 4 deals with this.
+
 ### Author's decisions
 
 - **The stated noise variance of 2 is rejected** on the basis of the calculation above (log #19, the author's). The estimated variance is used for all uncertainty calculations, and the stated value is shown only for comparison (log #5, AI proposal approved by the author).
 - The reading that 2 was meant as the standard deviation is included, labelled as the AI's interpretation (log #23, the author's decision to include it).
 - **Unit price is not needed to solve this problem, but it can be useful for other problems** (log #28, the author's).
+- The answer on the estimated volumes comes from the exact methods, and greedy is reported only for comparison (log #37, AI proposal approved by the author). All three methods are compared on result and computational effort (log #32, the author's).
+- **Computational time is not a problem at this size. For industry-size problems, though, it is always a good start to estimate the computational time of different solutions on a small data set, and then choose the most accurate and efficient one** (log #40, the author's).

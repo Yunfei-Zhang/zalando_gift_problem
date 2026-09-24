@@ -10,13 +10,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Tests: `.venv/Scripts/python.exe -m pytest`. For a single test, add `path/to/test_file.py::test_name`.
 - Data summary and checks: `.venv/Scripts/python.exe -m gift.data`.
 - Volume estimation report, which rewrites `results/volumes.csv`, `results/estimation.json` and `results/figures/*.png`: `.venv/Scripts/python.exe -m gift.estimate`.
+- Gift selection report, which rewrites `results/knapsack.json`: `.venv/Scripts/python.exe -m gift.knapsack`. The timings in it change from run to run.
 - Git remote: `origin` is `https://github.com/Yunfei-Zhang/zalando_gift_problem` (branch `main`).
 
 When code is added, record its run and test commands here.
 
 ## Repository state
 
-The code lives in the `gift/` package, with tests in `tests/`. `gift/data.py` loads and checks the JSON and returns `GiftData` (`names`, `prices`, `A`, `b`), which every later step uses. `gift/estimate.py` fits the volumes by least squares and returns a `Fit`, whose `covariance(variance)` and `standard_errors(variance)` default to the estimated noise variance; pass `STATED_VARIANCE` only for comparison. `gift/figures.py` holds the plotting helpers. Generated outputs go in `results/` and are committed. `DECISIONS.md` has the "Step review" table showing which steps are done. The original problem statement and data:
+The code lives in the `gift/` package, with tests in `tests/`. `gift/data.py` loads and checks the JSON and returns `GiftData` (`names`, `prices`, `A`, `b`), which every later step uses. `gift/estimate.py` fits the volumes by least squares and returns a `Fit`, whose `covariance(variance)` and `standard_errors(variance)` default to the estimated noise variance; pass `STATED_VARIANCE` only for comparison. `gift/figures.py` holds the plotting helpers. `gift/knapsack.py` solves the 0/1 knapsack on given volumes with three methods: `exact_table` (the proposed method), `integer_program` and `greedy`, each returning `(Selection, work)`. It also provides `fractional_bound` and `near_optimal`, which step 4 builds on. Generated outputs go in `results/` and are committed. `DECISIONS.md` has the "Step review" table showing which steps are done. The original problem statement and data:
 
 - `task.md`: the Zalando "Gift Problem". It is a job-application exercise for an Applied Scientist role, submitted in place of a cover letter, so the reasoning and write-up count as much as the final answer.
 - `items.json`: 60 items (`A1`–`A60`), each with an integer `price`. No volumes.
@@ -28,7 +29,7 @@ The code lives in the `gift/` package, with tests in `tests/`. `gift/data.py` lo
 
 1. **Estimate item volumes (regression).** Each package's `total_volume` is the sum of its items' true volumes plus Gaussian measurement error. An item appears at most once per package, so this is a linear model `A v + ε = b`: `A` is the 1000×60 0/1 table (package × item), `v` holds the unknown volumes, and `b` holds the measured totals. Ordinary least squares is the maximum-likelihood estimate, and `σ²(AᵀA)⁻¹` gives the uncertainty of the estimates.
    - **Noise variance:** `task.md` states variance 2, but the residual variance of the fit is about 3.86 (95% CI 3.53–4.23). The author rejects the stated value (DECISIONS #19), so the estimated variance is the main one and the stated 2 is shown only for comparison (#5). The reading "2 was meant as the standard deviation" goes in the write-up labelled as the AI's interpretation, not the author's (#23).
-2. **Choose the gift (knapsack).** Maximise total price subject to total volume ≤ 40 L. The natural reading is a 0/1 knapsack (each item at most once), but `task.md` does not say this outright, so state the assumption. Prices are whole numbers, so a DP over total price is exact without rounding any volume. The method is the author's call in its step.
+2. **Choose the gift (knapsack).** Maximise total price subject to total volume ≤ 40 L, with each item at most once (#31) and exactly 40 L allowed (#35). The exact table over total price is the proposed method, integer programming is the second exact method and cross-check, and greedy by unit price is only a comparison (#32, #37). On the estimated volumes, the best set is priced 757 at 39.972 L.
 3. **Robustness.** The volumes are estimates, and the best-priced set sits very close to 40 L. The headline is the most expensive set with at least a 95% chance of fitting, and the exact optimum is shown alongside with its risk (#4).
 
 ## Working mode (set by the user)

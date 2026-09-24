@@ -1,0 +1,2033 @@
+{
+  "levels": [
+    0.5,
+    0.8,
+    0.9,
+    0.95,
+    0.99,
+    0.999
+  ],
+  "headline_level": 0.95,
+  "variances": {
+    "estimated": 3.8605953484454374,
+    "stated": 2.0
+  },
+  "window": 40,
+  "positive_only_acceptance": {
+    "estimated": 0.9035133333333333,
+    "stated": 0.9653466666666667
+  },
+  "optimum_on_estimates": {
+    "items": [
+      "A6",
+      "A8",
+      "A9",
+      "A23",
+      "A32",
+      "A35",
+      "A38",
+      "A44",
+      "A48"
+    ],
+    "price": 757,
+    "volume_l": 39.97233714874508,
+    "sd_l": {
+      "estimated": 0.7057584614015343,
+      "stated": 0.5079768842554747
+    },
+    "chance": {
+      "estimated_normal": 0.515632906216988,
+      "estimated_positive_only": 0.49059,
+      "stated_normal": 0.5217144306052506,
+      "stated_positive_only": 0.51166
+    }
+  },
+  "recommended": {
+    "items": [
+      "A6",
+      "A8",
+      "A9",
+      "A32",
+      "A35",
+      "A38",
+      "A39",
+      "A44",
+      "A49"
+    ],
+    "price": 735,
+    "volume_l": 38.22059387109573,
+    "sd_l": {
+      "estimated": 0.7538317829522726,
+      "stated": 0.5425781500322404
+    },
+    "chance": {
+      "estimated_normal": 0.9908743906218582,
+      "estimated_positive_only": 0.99044,
+      "stated_normal": 0.9994801155579403,
+      "stated_positive_only": 0.99942
+    }
+  },
+  "best_by_level": [
+    {
+      "level": 0.5,
+      "estimated_normal": {
+        "price": 757,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A38",
+          "A44",
+          "A48"
+        ],
+        "chance": 0.515632906216988
+      },
+      "estimated_positive_only": {
+        "price": 751,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A53"
+        ],
+        "chance": 0.50733
+      },
+      "stated_normal": {
+        "price": 757,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A38",
+          "A44",
+          "A48"
+        ],
+        "chance": 0.5217144306052506
+      },
+      "stated_positive_only": {
+        "price": 757,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A38",
+          "A44",
+          "A48"
+        ],
+        "chance": 0.51166
+      }
+    },
+    {
+      "level": 0.8,
+      "estimated_normal": {
+        "price": 737,
+        "items": [
+          "A6",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A39",
+          "A44",
+          "A48",
+          "A49"
+        ],
+        "chance": 0.8419322650722019
+      },
+      "estimated_positive_only": {
+        "price": 737,
+        "items": [
+          "A6",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A39",
+          "A44",
+          "A48",
+          "A49"
+        ],
+        "chance": 0.83025
+      },
+      "stated_normal": {
+        "price": 737,
+        "items": [
+          "A6",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A39",
+          "A44",
+          "A48",
+          "A49"
+        ],
+        "chance": 0.9181491315482153
+      },
+      "stated_positive_only": {
+        "price": 737,
+        "items": [
+          "A6",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A39",
+          "A44",
+          "A48",
+          "A49"
+        ],
+        "chance": 0.91452
+      }
+    },
+    {
+      "level": 0.9,
+      "estimated_normal": {
+        "price": 735,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "chance": 0.9908743906218582
+      },
+      "estimated_positive_only": {
+        "price": 735,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "chance": 0.99044
+      },
+      "stated_normal": {
+        "price": 737,
+        "items": [
+          "A6",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A39",
+          "A44",
+          "A48",
+          "A49"
+        ],
+        "chance": 0.9181491315482153
+      },
+      "stated_positive_only": {
+        "price": 737,
+        "items": [
+          "A6",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A39",
+          "A44",
+          "A48",
+          "A49"
+        ],
+        "chance": 0.91452
+      }
+    },
+    {
+      "level": 0.95,
+      "estimated_normal": {
+        "price": 735,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "chance": 0.9908743906218582
+      },
+      "estimated_positive_only": {
+        "price": 735,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "chance": 0.99044
+      },
+      "stated_normal": {
+        "price": 735,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "chance": 0.9994801155579403
+      },
+      "stated_positive_only": {
+        "price": 735,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "chance": 0.99942
+      }
+    },
+    {
+      "level": 0.99,
+      "estimated_normal": {
+        "price": 735,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "chance": 0.9908743906218582
+      },
+      "estimated_positive_only": {
+        "price": 735,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "chance": 0.99044
+      },
+      "stated_normal": {
+        "price": 735,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "chance": 0.9994801155579403
+      },
+      "stated_positive_only": {
+        "price": 735,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "chance": 0.99942
+      }
+    },
+    {
+      "level": 0.999,
+      "estimated_normal": {
+        "price": 730,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A40",
+          "A44"
+        ],
+        "chance": 0.9994974083324568
+      },
+      "estimated_positive_only": {
+        "price": 730,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A40",
+          "A44"
+        ],
+        "chance": 0.99951
+      },
+      "stated_normal": {
+        "price": 735,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "chance": 0.9994801155579403
+      },
+      "stated_positive_only": {
+        "price": 735,
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "chance": 0.99942
+      }
+    }
+  ],
+  "expected_price": {
+    "estimated": {
+      "items": [
+        "A6",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A44",
+        "A48"
+      ],
+      "price": 734,
+      "volume_l": 37.9815711995564,
+      "sd_l": {
+        "estimated": 0.7181170821202334,
+        "stated": 0.5168721281522507
+      },
+      "chance": {
+        "estimated_normal": 0.9975284903559947,
+        "estimated_positive_only": 0.99733,
+        "stated_normal": 0.9999529035649103,
+        "stated_positive_only": 0.99995
+      },
+      "price_times_chance": 732.1859119213001
+    },
+    "stated": {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A44",
+        "A49"
+      ],
+      "price": 735,
+      "volume_l": 38.22059387109573,
+      "sd_l": {
+        "estimated": 0.7538317829522726,
+        "stated": 0.5425781500322404
+      },
+      "chance": {
+        "estimated_normal": 0.9908743906218582,
+        "estimated_positive_only": 0.99044,
+        "stated_normal": 0.9994801155579403,
+        "stated_positive_only": 0.99942
+      },
+      "price_times_chance": 734.6178849350861
+    }
+  },
+  "sets": [
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A38",
+        "A44",
+        "A48"
+      ],
+      "price": 757,
+      "volume_l": 39.97233714874508,
+      "sd_l": {
+        "estimated": 0.7057584614015343,
+        "stated": 0.5079768842554747
+      },
+      "chance": {
+        "estimated_normal": 0.515632906216988,
+        "estimated_positive_only": 0.49059,
+        "stated_normal": 0.5217144306052506,
+        "stated_positive_only": 0.51166
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A44",
+        "A53"
+      ],
+      "price": 751,
+      "volume_l": 39.9383572549076,
+      "sd_l": {
+        "estimated": 0.7484794861260966,
+        "stated": 0.5387257795484742
+      },
+      "chance": {
+        "estimated_normal": 0.5328187024570178,
+        "estimated_positive_only": 0.50733,
+        "stated_normal": 0.5455488509390483,
+        "stated_positive_only": 0.53487
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A44",
+        "A48",
+        "A53"
+      ],
+      "price": 741,
+      "volume_l": 39.879720772940836,
+      "sd_l": {
+        "estimated": 0.7456267918876138,
+        "stated": 0.5366725236397597
+      },
+      "chance": {
+        "estimated_normal": 0.5640765218718263,
+        "estimated_positive_only": 0.5391,
+        "stated_normal": 0.5886681659858389,
+        "stated_positive_only": 0.57795
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A39",
+        "A44",
+        "A48",
+        "A49"
+      ],
+      "price": 737,
+      "volume_l": 39.2599500793708,
+      "sd_l": {
+        "estimated": 0.7382552125238261,
+        "stated": 0.5313667538586613
+      },
+      "chance": {
+        "estimated_normal": 0.8419322650722019,
+        "estimated_positive_only": 0.83025,
+        "stated_normal": 0.9181491315482153,
+        "stated_positive_only": 0.91452
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A38",
+        "A40",
+        "A44"
+      ],
+      "price": 736,
+      "volume_l": 39.745733619461056,
+      "sd_l": {
+        "estimated": 0.6728318330274096,
+        "stated": 0.48427760609547876
+      },
+      "chance": {
+        "estimated_normal": 0.6472493424208312,
+        "estimated_positive_only": 0.62506,
+        "stated_normal": 0.7002232165177737,
+        "stated_positive_only": 0.69163
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A44",
+        "A49"
+      ],
+      "price": 735,
+      "volume_l": 38.22059387109573,
+      "sd_l": {
+        "estimated": 0.7538317829522726,
+        "stated": 0.5425781500322404
+      },
+      "chance": {
+        "estimated_normal": 0.9908743906218582,
+        "estimated_positive_only": 0.99044,
+        "stated_normal": 0.9994801155579403,
+        "stated_positive_only": 0.99942
+      }
+    },
+    {
+      "items": [
+        "A3",
+        "A6",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A44"
+      ],
+      "price": 735,
+      "volume_l": 39.2238853769093,
+      "sd_l": {
+        "estimated": 0.7361802829587734,
+        "stated": 0.5298733020431322
+      },
+      "chance": {
+        "estimated_normal": 0.8541146936363972,
+        "estimated_positive_only": 0.84228,
+        "stated_normal": 0.9285009764455974,
+        "stated_positive_only": 0.92644
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A38",
+        "A39",
+        "A40",
+        "A44"
+      ],
+      "price": 735,
+      "volume_l": 39.87164486086836,
+      "sd_l": {
+        "estimated": 0.7458888638195159,
+        "stated": 0.5368611525981063
+      },
+      "chance": {
+        "estimated_normal": 0.5683140435095535,
+        "estimated_positive_only": 0.5437,
+        "stated_normal": 0.5944799400623559,
+        "stated_positive_only": 0.58363
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A40",
+        "A48"
+      ],
+      "price": 735,
+      "volume_l": 39.977206418314985,
+      "sd_l": {
+        "estimated": 0.718645074961848,
+        "stated": 0.5172521564101621
+      },
+      "chance": {
+        "estimated_normal": 0.5126513064120508,
+        "estimated_positive_only": 0.48423,
+        "stated_normal": 0.5175743710086333,
+        "stated_positive_only": 0.50494
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A44",
+        "A48"
+      ],
+      "price": 734,
+      "volume_l": 37.9815711995564,
+      "sd_l": {
+        "estimated": 0.7181170821202334,
+        "stated": 0.5168721281522507
+      },
+      "chance": {
+        "estimated_normal": 0.9975284903559947,
+        "estimated_positive_only": 0.99733,
+        "stated_normal": 0.9999529035649103,
+        "stated_positive_only": 0.99995
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A35",
+        "A39",
+        "A40",
+        "A44",
+        "A49"
+      ],
+      "price": 733,
+      "volume_l": 38.854468012555074,
+      "sd_l": {
+        "estimated": 0.7525152930962768,
+        "stated": 0.5416305929687735
+      },
+      "chance": {
+        "estimated_normal": 0.9360293676704381,
+        "estimated_positive_only": 0.93031,
+        "stated_normal": 0.982783711048915,
+        "stated_positive_only": 0.98202
+      }
+    },
+    {
+      "items": [
+        "A3",
+        "A6",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A39",
+        "A40",
+        "A44"
+      ],
+      "price": 733,
+      "volume_l": 39.85775951836865,
+      "sd_l": {
+        "estimated": 0.7437789584758489,
+        "stated": 0.5353425266075349
+      },
+      "chance": {
+        "estimated_normal": 0.5758313187537413,
+        "estimated_positive_only": 0.55277,
+        "stated_normal": 0.6047648483907739,
+        "stated_positive_only": 0.59186
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A39",
+        "A40",
+        "A44",
+        "A48"
+      ],
+      "price": 732,
+      "volume_l": 38.61544534101574,
+      "sd_l": {
+        "estimated": 0.7294923665102552,
+        "stated": 0.5250596056505553
+      },
+      "chance": {
+        "estimated_normal": 0.9711499858649322,
+        "estimated_positive_only": 0.96831,
+        "stated_normal": 0.9958172121626164,
+        "stated_positive_only": 0.99536
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A18",
+        "A23",
+        "A32",
+        "A35",
+        "A39",
+        "A44",
+        "A48"
+      ],
+      "price": 732,
+      "volume_l": 39.98214163612417,
+      "sd_l": {
+        "estimated": 0.7553340719338402,
+        "stated": 0.5436594379201567
+      },
+      "chance": {
+        "estimated_normal": 0.509431313874856,
+        "estimated_positive_only": 0.48514,
+        "stated_normal": 0.513102274845137,
+        "stated_positive_only": 0.50265
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A33",
+        "A35",
+        "A44",
+        "A49"
+      ],
+      "price": 732,
+      "volume_l": 39.98453547959542,
+      "sd_l": {
+        "estimated": 0.7473547605727539,
+        "stated": 0.5379162468067838
+      },
+      "chance": {
+        "estimated_normal": 0.5082544610990999,
+        "estimated_positive_only": 0.48003,
+        "stated_normal": 0.5114675868858287,
+        "stated_positive_only": 0.50151
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A35",
+        "A37",
+        "A38",
+        "A39",
+        "A44"
+      ],
+      "price": 731,
+      "volume_l": 39.54402239775976,
+      "sd_l": {
+        "estimated": 0.733636590364091,
+        "stated": 0.5280424532337755
+      },
+      "chance": {
+        "estimated_normal": 0.7328747217125071,
+        "estimated_positive_only": 0.71422,
+        "stated_normal": 0.806075426079927,
+        "stated_positive_only": 0.79931
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A40",
+        "A44"
+      ],
+      "price": 730,
+      "volume_l": 37.57608913274067,
+      "sd_l": {
+        "estimated": 0.7369589122392854,
+        "stated": 0.5304337284461246
+      },
+      "chance": {
+        "estimated_normal": 0.9994974083324568,
+        "estimated_positive_only": 0.99951,
+        "stated_normal": 0.9999975576189363,
+        "stated_positive_only": 1.0
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A33",
+        "A35",
+        "A38",
+        "A44"
+      ],
+      "price": 729,
+      "volume_l": 38.70615659978101,
+      "sd_l": {
+        "estimated": 0.7308489546045207,
+        "stated": 0.5260360238318896
+      },
+      "chance": {
+        "estimated_normal": 0.9616638594317124,
+        "estimated_positive_only": 0.95831,
+        "stated_normal": 0.9930455942708256,
+        "stated_positive_only": 0.99283
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A9",
+        "A32",
+        "A33",
+        "A35",
+        "A38",
+        "A39",
+        "A40",
+        "A44"
+      ],
+      "price": 729,
+      "volume_l": 39.976330905271396,
+      "sd_l": {
+        "estimated": 0.7390899385582136,
+        "stated": 0.5319675564750593
+      },
+      "chance": {
+        "estimated_normal": 0.5127738024302676,
+        "estimated_positive_only": 0.48577,
+        "stated_normal": 0.5177444806457637,
+        "stated_positive_only": 0.5053
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A43",
+        "A44"
+      ],
+      "price": 728,
+      "volume_l": 39.320900623032585,
+      "sd_l": {
+        "estimated": 0.7747009423315284,
+        "stated": 0.5575989413344842
+      },
+      "chance": {
+        "estimated_normal": 0.8096468138518405,
+        "estimated_positive_only": 0.79431,
+        "stated_normal": 0.8883688845365125,
+        "stated_positive_only": 0.88263
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A28",
+        "A32",
+        "A35",
+        "A38",
+        "A44"
+      ],
+      "price": 728,
+      "volume_l": 39.59185986591335,
+      "sd_l": {
+        "estimated": 0.7178181276068443,
+        "stated": 0.5166569525779559
+      },
+      "chance": {
+        "estimated_normal": 0.7151808668536211,
+        "estimated_positive_only": 0.69563,
+        "stated_normal": 0.7852254572784467,
+        "stated_positive_only": 0.77732
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A33",
+        "A35",
+        "A40",
+        "A44"
+      ],
+      "price": 727,
+      "volume_l": 39.340030741240355,
+      "sd_l": {
+        "estimated": 0.7369046471336497,
+        "stated": 0.5303946705803075
+      },
+      "chance": {
+        "estimated_normal": 0.8147658601924253,
+        "estimated_positive_only": 0.79952,
+        "stated_normal": 0.8933051266642041,
+        "stated_positive_only": 0.8891
+      }
+    },
+    {
+      "items": [
+        "A3",
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A33",
+        "A35",
+        "A39",
+        "A44"
+      ],
+      "price": 726,
+      "volume_l": 38.81818249868861,
+      "sd_l": {
+        "estimated": 0.7804711175816281,
+        "stated": 0.5617520840957243
+      },
+      "chance": {
+        "estimated_normal": 0.9350170091215962,
+        "estimated_positive_only": 0.92836,
+        "stated_normal": 0.9823023208718796,
+        "stated_positive_only": 0.98173
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A9",
+        "A32",
+        "A35",
+        "A38",
+        "A40",
+        "A44",
+        "A48"
+      ],
+      "price": 726,
+      "volume_l": 39.68709713749429,
+      "sd_l": {
+        "estimated": 0.6609038358514894,
+        "stated": 0.4756923079060677
+      },
+      "chance": {
+        "estimated_normal": 0.6820528066228255,
+        "estimated_positive_only": 0.66137,
+        "stated_normal": 0.7446615811138867,
+        "stated_positive_only": 0.73851
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A39",
+        "A40",
+        "A43",
+        "A44"
+      ],
+      "price": 726,
+      "volume_l": 39.95477476449193,
+      "sd_l": {
+        "estimated": 0.7877921158518727,
+        "stated": 0.5670214476164583
+      },
+      "chance": {
+        "estimated_normal": 0.5228897357803426,
+        "estimated_positive_only": 0.49991,
+        "stated_normal": 0.5317856537118083,
+        "stated_positive_only": 0.52176
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A33",
+        "A35",
+        "A39",
+        "A44",
+        "A48"
+      ],
+      "price": 725,
+      "volume_l": 37.5758683213357,
+      "sd_l": {
+        "estimated": 0.770413675040802,
+        "stated": 0.5545131367718457
+      },
+      "chance": {
+        "estimated_normal": 0.9991739055502707,
+        "estimated_positive_only": 0.99909,
+        "stated_normal": 0.9999938341564905,
+        "stated_positive_only": 1.0
+      }
+    },
+    {
+      "items": [
+        "A3",
+        "A6",
+        "A9",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A44",
+        "A48"
+      ],
+      "price": 725,
+      "volume_l": 39.165248894942536,
+      "sd_l": {
+        "estimated": 0.7212272217961433,
+        "stated": 0.5191106830525074
+      },
+      "chance": {
+        "estimated_normal": 0.8764462826143089,
+        "estimated_positive_only": 0.86656,
+        "stated_normal": 0.9460868671513795,
+        "stated_positive_only": 0.94408
+      }
+    },
+    {
+      "items": [
+        "A3",
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A28",
+        "A32",
+        "A35",
+        "A39",
+        "A44"
+      ],
+      "price": 725,
+      "volume_l": 39.70388576482094,
+      "sd_l": {
+        "estimated": 0.7809184528173103,
+        "stated": 0.5620740582152952
+      },
+      "chance": {
+        "estimated_normal": 0.6477255499444166,
+        "estimated_positive_only": 0.6263,
+        "stated_normal": 0.7008421738573991,
+        "stated_positive_only": 0.692
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A38",
+        "A39",
+        "A40",
+        "A44",
+        "A48"
+      ],
+      "price": 725,
+      "volume_l": 39.8130083789016,
+      "sd_l": {
+        "estimated": 0.728755001853323,
+        "stated": 0.524528879883209
+      },
+      "chance": {
+        "estimated_normal": 0.6012525510015101,
+        "estimated_positive_only": 0.57827,
+        "stated_normal": 0.6392648365486542,
+        "stated_positive_only": 0.62758
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A56"
+      ],
+      "price": 725,
+      "volume_l": 39.945183102285384,
+      "sd_l": {
+        "estimated": 0.7277326941656409,
+        "stated": 0.5237930634497681
+      },
+      "chance": {
+        "estimated_normal": 0.5300221710090499,
+        "estimated_positive_only": 0.50307,
+        "stated_normal": 0.5416747107192272,
+        "stated_positive_only": 0.52877
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A28",
+        "A32",
+        "A35",
+        "A39",
+        "A44",
+        "A48"
+      ],
+      "price": 724,
+      "volume_l": 38.46157158746803,
+      "sd_l": {
+        "estimated": 0.7694835101974495,
+        "stated": 0.5538436410947669
+      },
+      "chance": {
+        "estimated_normal": 0.9772120500600832,
+        "estimated_positive_only": 0.97492,
+        "stated_normal": 0.9972630006206337,
+        "stated_positive_only": 0.99718
+      }
+    },
+    {
+      "items": [
+        "A3",
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A44",
+        "A48"
+      ],
+      "price": 723,
+      "volume_l": 38.528948730911495,
+      "sd_l": {
+        "estimated": 0.7239062671721763,
+        "stated": 0.521038953413154
+      },
+      "chance": {
+        "estimated_normal": 0.9789283272271487,
+        "estimated_positive_only": 0.97626,
+        "stated_normal": 0.99762342475899,
+        "stated_positive_only": 0.99781
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A44",
+        "A49",
+        "A53"
+      ],
+      "price": 723,
+      "volume_l": 39.661321817980834,
+      "sd_l": {
+        "estimated": 0.7235510489087951,
+        "stated": 0.5207832814282876
+      },
+      "chance": {
+        "estimated_normal": 0.6801355222874704,
+        "estimated_positive_only": 0.65608,
+        "stated_normal": 0.7422587167206894,
+        "stated_positive_only": 0.73534
+      }
+    },
+    {
+      "items": [
+        "A3",
+        "A6",
+        "A9",
+        "A32",
+        "A35",
+        "A39",
+        "A40",
+        "A44",
+        "A48"
+      ],
+      "price": 723,
+      "volume_l": 39.79912303640188,
+      "sd_l": {
+        "estimated": 0.7277514500653541,
+        "stated": 0.5238065632007719
+      },
+      "chance": {
+        "estimated_normal": 0.6087352350158788,
+        "estimated_positive_only": 0.58611,
+        "stated_normal": 0.6493234457445218,
+        "stated_positive_only": 0.63938
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A33",
+        "A35",
+        "A44",
+        "A48",
+        "A49"
+      ],
+      "price": 722,
+      "volume_l": 39.92589899762865,
+      "sd_l": {
+        "estimated": 0.7388845953004032,
+        "stated": 0.5318197585611691
+      },
+      "chance": {
+        "estimated_normal": 0.5399420204772636,
+        "estimated_positive_only": 0.5132,
+        "stated_normal": 0.5554072061585578,
+        "stated_positive_only": 0.54598
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A31",
+        "A32",
+        "A35",
+        "A38",
+        "A44"
+      ],
+      "price": 721,
+      "volume_l": 39.6354171510485,
+      "sd_l": {
+        "estimated": 0.7324886586480588,
+        "stated": 0.5272162176187039
+      },
+      "chance": {
+        "estimated_normal": 0.6906634305281343,
+        "estimated_positive_only": 0.66929,
+        "stated_normal": 0.7553819561243647,
+        "stated_positive_only": 0.74835
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A28",
+        "A32",
+        "A33",
+        "A35",
+        "A38",
+        "A39",
+        "A44"
+      ],
+      "price": 721,
+      "volume_l": 39.82245715172368,
+      "sd_l": {
+        "estimated": 0.7775875654639923,
+        "stated": 0.5596766179122994
+      },
+      "chance": {
+        "estimated_normal": 0.5903032883632613,
+        "estimated_positive_only": 0.56534,
+        "stated_normal": 0.6244631750002696,
+        "stated_positive_only": 0.61622
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A38",
+        "A44",
+        "A53"
+      ],
+      "price": 720,
+      "volume_l": 38.38294293816642,
+      "sd_l": {
+        "estimated": 0.7033782591985054,
+        "stated": 0.5062637093307398
+      },
+      "chance": {
+        "estimated_normal": 0.9892471446024287,
+        "estimated_positive_only": 0.9886,
+        "stated_normal": 0.9992986631102349,
+        "stated_positive_only": 0.99922
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A9",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A40",
+        "A44",
+        "A53"
+      ],
+      "price": 720,
+      "volume_l": 39.6531172436568,
+      "sd_l": {
+        "estimated": 0.7074930255639139,
+        "stated": 0.5092253545848239
+      },
+      "chance": {
+        "estimated_normal": 0.6880386494243882,
+        "estimated_positive_only": 0.665,
+        "stated_normal": 0.7521265598804265,
+        "stated_positive_only": 0.7446
+      }
+    },
+    {
+      "items": [
+        "A3",
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A33",
+        "A35",
+        "A38",
+        "A44"
+      ],
+      "price": 720,
+      "volume_l": 39.88983429516715,
+      "sd_l": {
+        "estimated": 0.7427051070211891,
+        "stated": 0.5345696110196608
+      },
+      "chance": {
+        "estimated_normal": 0.5589589658439403,
+        "estimated_positive_only": 0.53287,
+        "stated_normal": 0.5816369579533157,
+        "stated_positive_only": 0.57154
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A33",
+        "A35",
+        "A38",
+        "A44",
+        "A48"
+      ],
+      "price": 719,
+      "volume_l": 38.64752011781424,
+      "sd_l": {
+        "estimated": 0.7282825540594196,
+        "stated": 0.5241888307425386
+      },
+      "chance": {
+        "estimated_normal": 0.9683502029342923,
+        "estimated_positive_only": 0.96494,
+        "stated_normal": 0.9950619678389012,
+        "stated_positive_only": 0.99489
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A38",
+        "A49"
+      ],
+      "price": 719,
+      "volume_l": 39.12493332189564,
+      "sd_l": {
+        "estimated": 0.6983582878182619,
+        "stated": 0.502650533491907
+      },
+      "chance": {
+        "estimated_normal": 0.894903333130817,
+        "estimated_positive_only": 0.88458,
+        "stated_normal": 0.9591498579602067,
+        "stated_positive_only": 0.95802
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A40",
+        "A44",
+        "A53"
+      ],
+      "price": 718,
+      "volume_l": 39.01681707962577,
+      "sd_l": {
+        "estimated": 0.7064784071058653,
+        "stated": 0.5084950725532005
+      },
+      "chance": {
+        "estimated_normal": 0.9179884205266982,
+        "estimated_positive_only": 0.90986,
+        "stated_normal": 0.9734136149618517,
+        "stated_positive_only": 0.97268
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A35",
+        "A38",
+        "A39",
+        "A43",
+        "A44",
+        "A48"
+      ],
+      "price": 718,
+      "volume_l": 39.26226414106581,
+      "sd_l": {
+        "estimated": 0.759991823187687,
+        "stated": 0.5470119021114717
+      },
+      "chance": {
+        "estimated_normal": 0.8341550197791526,
+        "estimated_positive_only": 0.82123,
+        "stated_normal": 0.9112777190927857,
+        "stated_positive_only": 0.90776
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A28",
+        "A32",
+        "A35",
+        "A38",
+        "A44",
+        "A48"
+      ],
+      "price": 718,
+      "volume_l": 39.53322338394658,
+      "sd_l": {
+        "estimated": 0.7165341756780943,
+        "stated": 0.5157328150210287
+      },
+      "chance": {
+        "estimated_normal": 0.7426176675619655,
+        "estimated_positive_only": 0.72245,
+        "stated_normal": 0.8172870379715473,
+        "stated_positive_only": 0.80994
+      }
+    },
+    {
+      "items": [
+        "A3",
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A31",
+        "A32",
+        "A35",
+        "A39",
+        "A44"
+      ],
+      "price": 718,
+      "volume_l": 39.74744304995609,
+      "sd_l": {
+        "estimated": 0.7839884723493259,
+        "stated": 0.5642837362308869
+      },
+      "chance": {
+        "estimated_normal": 0.6263280845681107,
+        "estimated_positive_only": 0.60464,
+        "stated_normal": 0.6727685267571707,
+        "stated_positive_only": 0.66313
+      }
+    },
+    {
+      "items": [
+        "A3",
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A39",
+        "A44",
+        "A53"
+      ],
+      "price": 717,
+      "volume_l": 38.49496883707401,
+      "sd_l": {
+        "estimated": 0.7560851920980752,
+        "stated": 0.5442000643548321
+      },
+      "chance": {
+        "estimated_normal": 0.9767352299432992,
+        "estimated_positive_only": 0.97495,
+        "stated_normal": 0.9971589543133157,
+        "stated_positive_only": 0.99721
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A31",
+        "A32",
+        "A35",
+        "A39",
+        "A44",
+        "A48"
+      ],
+      "price": 717,
+      "volume_l": 38.50512887260318,
+      "sd_l": {
+        "estimated": 0.7708047322284336,
+        "stated": 0.5547946041896706
+      },
+      "chance": {
+        "estimated_normal": 0.9737714986666055,
+        "estimated_positive_only": 0.9706,
+        "stated_normal": 0.9964748464348655,
+        "stated_positive_only": 0.99641
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A32",
+        "A33",
+        "A35",
+        "A40",
+        "A44",
+        "A48"
+      ],
+      "price": 717,
+      "volume_l": 39.28139425927359,
+      "sd_l": {
+        "estimated": 0.7331381047430577,
+        "stated": 0.527683663100228
+      },
+      "chance": {
+        "estimated_normal": 0.8365008351011449,
+        "estimated_positive_only": 0.82291,
+        "stated_normal": 0.9133713272574626,
+        "stated_positive_only": 0.91057
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A32",
+        "A35",
+        "A40",
+        "A49"
+      ],
+      "price": 717,
+      "volume_l": 39.758807463354984,
+      "sd_l": {
+        "estimated": 0.7038842488315032,
+        "stated": 0.5066279005537899
+      },
+      "chance": {
+        "estimated_normal": 0.6340726357315075,
+        "estimated_positive_only": 0.60683,
+        "stated_normal": 0.682989286714695,
+        "stated_positive_only": 0.67445
+      }
+    },
+    {
+      "items": [
+        "A6",
+        "A8",
+        "A9",
+        "A23",
+        "A25",
+        "A32",
+        "A33",
+        "A35",
+        "A39",
+        "A44"
+      ],
+      "price": 717,
+      "volume_l": 39.84530775692028,
+      "sd_l": {
+        "estimated": 0.7775069388544977,
+        "stated": 0.5596185860839626
+      },
+      "chance": {
+        "estimated_normal": 0.5788527124365977,
+        "estimated_positive_only": 0.55584,
+        "stated_normal": 0.6088889486608191,
+        "stated_positive_only": 0.59736
+      }
+    }
+  ],
+  "stability": {
+    "draws": 2000,
+    "draws_with_ties": 101,
+    "item_share": {
+      "A6": 1.0,
+      "A9": 1.0,
+      "A32": 1.0,
+      "A35": 0.9985,
+      "A44": 0.97,
+      "A23": 0.838,
+      "A8": 0.7985,
+      "A39": 0.788,
+      "A38": 0.77,
+      "A48": 0.463,
+      "A33": 0.3145,
+      "A49": 0.2975,
+      "A53": 0.08,
+      "A40": 0.0655,
+      "A3": 0.0565
+    },
+    "top_sets": [
+      {
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A23",
+          "A32",
+          "A33",
+          "A35",
+          "A38",
+          "A39",
+          "A44"
+        ],
+        "price": 760,
+        "share": 0.2855
+      },
+      {
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A38",
+          "A44",
+          "A48"
+        ],
+        "price": 757,
+        "share": 0.184
+      },
+      {
+        "items": [
+          "A6",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A39",
+          "A44",
+          "A48",
+          "A49"
+        ],
+        "price": 737,
+        "share": 0.1515
+      },
+      {
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A49"
+        ],
+        "price": 735,
+        "share": 0.114
+      },
+      {
+        "items": [
+          "A3",
+          "A6",
+          "A8",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A39",
+          "A44",
+          "A48"
+        ],
+        "price": 754,
+        "share": 0.0515
+      },
+      {
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A53"
+        ],
+        "price": 751,
+        "share": 0.046
+      },
+      {
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A44",
+          "A48",
+          "A53"
+        ],
+        "price": 741,
+        "share": 0.032
+      },
+      {
+        "items": [
+          "A6",
+          "A8",
+          "A9",
+          "A23",
+          "A32",
+          "A35",
+          "A38",
+          "A39",
+          "A40"
+        ],
+        "price": 745,
+        "share": 0.0295
+      }
+    ],
+    "distinct_sets": 28,
+    "share_optimum_set": 0.184,
+    "share_recommended_set": 0.114,
+    "share_optimum_set_including_ties": 0.1845,
+    "share_recommended_set_including_ties": 0.115
+  },
+  "calibration": {
+    "reps": 2000,
+    "skipped_non_positive_estimate": 190,
+    "rows": [
+      {
+        "level": 0.5,
+        "mean_nominal_chance": 0.6717340634301445,
+        "actual_fit_rate": 0.5220994475138122,
+        "standard_error": 0.011741027240995716,
+        "data_sets": 1810
+      },
+      {
+        "level": 0.8,
+        "mean_nominal_chance": 0.9025203834572275,
+        "actual_fit_rate": 0.8176795580110497,
+        "standard_error": 0.009075487549781849,
+        "data_sets": 1810
+      },
+      {
+        "level": 0.9,
+        "mean_nominal_chance": 0.9577861486632334,
+        "actual_fit_rate": 0.9022099447513812,
+        "standard_error": 0.006981710928015473,
+        "data_sets": 1810
+      },
+      {
+        "level": 0.95,
+        "mean_nominal_chance": 0.9811045585322669,
+        "actual_fit_rate": 0.9519337016574586,
+        "standard_error": 0.005027874198276503,
+        "data_sets": 1810
+      },
+      {
+        "level": 0.99,
+        "mean_nominal_chance": 0.9965396850008283,
+        "actual_fit_rate": 0.9895027624309393,
+        "standard_error": 0.0023955582254068892,
+        "data_sets": 1810
+      },
+      {
+        "level": 0.999,
+        "mean_nominal_chance": 0.9996778119499132,
+        "actual_fit_rate": 0.9988950276243094,
+        "standard_error": 0.0007809016646165363,
+        "data_sets": 1810
+      }
+    ],
+    "headline_by_nominal_chance": [
+      {
+        "from": 0.95,
+        "to": 0.97,
+        "mean_nominal_chance": 0.9602487112193407,
+        "actual_fit_rate": 0.9006342494714588,
+        "standard_error": 0.013755045059492538,
+        "data_sets": 473
+      },
+      {
+        "from": 0.97,
+        "to": 0.99,
+        "mean_nominal_chance": 0.9807254386259998,
+        "actual_fit_rate": 0.9525267993874426,
+        "standard_error": 0.008321589095740187,
+        "data_sets": 653
+      },
+      {
+        "from": 0.99,
+        "to": 0.995,
+        "mean_nominal_chance": 0.992643797403404,
+        "actual_fit_rate": 0.9774436090225563,
+        "standard_error": 0.009104159217127818,
+        "data_sets": 266
+      },
+      {
+        "from": 0.995,
+        "to": 1.0,
+        "mean_nominal_chance": 0.9979537057525639,
+        "actual_fit_rate": 0.992822966507177,
+        "standard_error": 0.004128765841720212,
+        "data_sets": 418
+      }
+    ],
+    "headline_including_skipped": {
+      "actual_fit_rate": 0.9475,
+      "standard_error": 0.004987171041783106,
+      "data_sets": 2000,
+      "skipped_that_fit": 172
+    }
+  }
+}

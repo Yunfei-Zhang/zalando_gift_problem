@@ -52,5 +52,5 @@ See `DECISIONS.md`. In short:
 
 - Python.
 - One solution: the direct reference solver (regression, then knapsack, then uncertainty). The planned Claude API solver and comparison were dropped by the user (#54). The unreviewed code for them lives only on the local branch `archive/claude-solver`, which must never be pushed or merged unless the user asks.
-- Remaining step: finish the write-up (section 1, problem statement, and a final pass over the README).
+- All steps are done and approved (see the "Step review" table in `DECISIONS.md`). The README states key points only (#62).
 - Python environment: a venv on Python 3.13 (`py -3.13`). The default `python` in Git Bash is Anaconda 3.8.

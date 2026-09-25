@@ -51,5 +51,6 @@ This is the user's job-interview submission, so the user supervises every step:
 See `DECISIONS.md`. In short:
 
 - Python.
-- Two solutions and a comparison: a direct reference solver (regression, then knapsack), and a script where Claude solves the same problem through the API. Before writing any Claude API code, load the `claude-api` skill so model IDs and SDK usage are current.
-- Python environment: a venv on Python 3.13 (`py -3.13`). The Claude SDK 1.x needs Python 3.10 or later, and the default `python` in Git Bash is Anaconda 3.8.
+- One solution: the direct reference solver (regression, then knapsack, then uncertainty). The planned Claude API solver and comparison were dropped by the user (#54). The unreviewed code for them lives only on the local branch `archive/claude-solver`, which must never be pushed or merged unless the user asks.
+- Remaining step: finish the write-up (section 1, problem statement, and a final pass over the README).
+- Python environment: a venv on Python 3.13 (`py -3.13`). The default `python` in Git Bash is Anaconda 3.8.
